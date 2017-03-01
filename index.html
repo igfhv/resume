@@ -366,10 +366,55 @@
             color: white;
             font-weight: bold;
         }
+/***************************/
+        /*--------------------------------------- /*
+* preloader 加载动画
+/*--------------------------------------- */
+        #preloader{
+            height:100%;
+            width:100%;
+            background: #37c3e5;
+            z-index:9999;
+            position:relative ;
+        }
+
+        #status{
+            background: url(img/loading.gif)center center no-repeat;
+            position:relative;
+            height:200px;
+            width:200px;
+            left:50%;
+            top:50%;
+            margin: -100px 0 0 -100px;
+            position: absolute;
+        }
 
     </style>
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script>
+        (function($){
+            /*-------------------------------*
+             * 页面加载时动画，加载完后隐藏动画
+             --------------------------------*/
+            $(window).load(function(){
+                $('#status').fadeOut();
+                $('#preloader').delay(300).fadeOut('slow');
+            });
+
+            $(document).ready(function(){
+                //code
+            })
+
+        })(jQuery);
+
+    </script>
 </head>
 <body>
+<!--Preloader 加载动画层-->
+<div id="preloader">
+    <div id="status"></div>
+</div>
+
 <div class="swiper-container swiper-container-vertical">
     <div class="swiper-wrapper">
         <div class="swiper-slide swiper-slide-active page1" style="height: 150px;">
