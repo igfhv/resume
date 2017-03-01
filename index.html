@@ -427,8 +427,9 @@
              * 页面加载时动画，加载完后隐藏动画
              --------------------------------*/
             $(window).load(function(){
+                
                 $('.spinner').fadeOut();
-                $('#preloader').delay(300).fadeOut('slow');
+                $('#preloader').delay(0).fadeOut('slow');
             });
 
             $(document).ready(function(){
